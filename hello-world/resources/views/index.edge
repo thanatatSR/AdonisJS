@@ -1,0 +1,42 @@
+<h1>View Page</h1>
+
+<h4>Array Loop</h4>
+<table>
+  <thead>
+    <tr>
+      <td>No</td>
+      <td>Name</td>
+      <td>Status</td>
+    </tr>
+  </thead>
+  <tbody>
+    @each(post in posts)
+    <tr>
+      <td>{{post.id}}</td>
+      <td>{{post.name}}</td>
+      @if(post.status)
+        <td>{{post.status}}</td>
+      @else
+      <td>hidden</td>
+      @end
+    </tr>
+    @endeach
+  </tbody>
+</table>
+
+<h4>Object Loop</h4>
+<table>
+  <thead>
+    <tr>
+      <td>Menu</td>
+      <td>Cost</td>
+    </tr>
+  </thead>
+  <tbody>
+    @each((values, key) in recipes)
+    <tr>
+      <td>{{key}}</td>
+      <td>{{values}}</td>
+    @endeach
+  </tbody>
+</table>
